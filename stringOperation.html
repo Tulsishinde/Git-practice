@@ -1,0 +1,202 @@
+<!-- StringOperation -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<title>String </title>
+<style>
+    
+    header{
+        background-color:rgb(33, 175, 215);
+        margin:20px 0px 20px 0px;
+        height: 60px;
+        padding-left: 20px;
+    }
+    #text1{
+        width: 1000px;
+        height: 150px;
+    }
+    button{
+    background-color: rgb(52, 52, 227);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 100px;
+   }
+</style>
+</head>
+<body>
+    <div class="container">
+    <header>
+       <h1>String Funtions Assignment</h1>
+    </header>
+    <div class="container-fluid">
+        <div class="row mb-3">
+        <textarea name="text1" id="text1" cols="30" rows="10" ></textarea><br>
+        </div>
+        <div class="row mb-3" style="justify-content: center;">
+            <button class="mr-2" onclick="CountWords()">Count words</button>
+            <button class="mr-2" onclick="CountLetters()">Count Letters</button>
+            <button class="mr-2" onclick="CountSpaces()">Count Spaces</button>
+            <button class="mr-2" onclick="CountNewLines()">Count NewLines</button>
+            <button class="mr-2" onclick="TitleCase()">Title Case</button><br>
+        </div>
+        <div class="row mb-3" style="justify-content: center;">
+            <button class="mr-2" onclick="CountVowels()">Count Vowels</button>
+            <button class="mr-2" onclick="CountConsonents()">Count Consonents</button>
+            <button class="mr-2" onclick="SortWords()">Sort words</button>
+            <button class="mr-2" onclick="CapitalizeWords()">Capitalize Words</button>
+            <button class="mr-2" onclick="SmallLetters()">Small Letters</button><br>
+        </div>
+        <div class="row mb-3" style="justify-content: center;">
+            <button class="mr-2" onclick="reverseString()">Reverse String</button>
+        </div>
+        <div class="row mb-3">
+            <textarea name="result" id="Result" cols="130" rows="7" placeholder="Result" ></textarea><br>
+        </div>
+    <div>   
+</div>
+    <script>
+        function CountWords(){
+            let string = document.getElementById('text1').value;
+            let Result = string.split(/\s+/).filter(word => word !== "").length;
+            document.getElementById('Result').innerHTML = Result;
+        }
+
+        function CountLetters(){
+            let string = document.getElementById('text1').value;
+            let Result= string.replace(/[^A-Za-z]/g, "").length;
+            document.getElementById('Result').innerHTML = Result;
+        }
+
+        function CountSpaces(){
+            let string = document.getElementById('text1').value;
+            let Result = string.split(' ').length-1;
+            document.getElementById('Result').innerHTML = Result;
+        }
+
+        function CountNewLines(){
+            let string = document.getElementById('text1').value;
+            let Result = string.split("\n").length - 1;
+            document.getElementById('Result').innerHTML = Result;
+        }
+
+        function TitleCase(){
+            let string = document.getElementById('text1').value;
+            let Result = string.split(' ').map(w => w[0].toUpperCase() + w.substring(1).toLowerCase()).join(' ');
+            document.getElementById('Result').innerHTML = Result;
+            console.log(Result);
+        }
+
+        function CountVowels(){
+            let string = document.getElementById('text1').value;
+            let Result = string.replace(/[^aeiouAEIOU]/g, "").length;
+            document.getElementById('Result').innerHTML = Result;
+        }
+
+        function CountConsonents(){
+            let string = document.getElementById('text1').value;
+            let Result = string.replace(/[^bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]/g, "").length;
+            document.getElementById('Result').innerHTML = Result;
+        }
+        
+       
+    function SortWords(){
+        var string = document.getElementById("text1").value;
+        var Result = string.split(" ");
+
+        console.log(Result);
+
+
+        var one = 0;
+        var two = 0;
+        var three = 0;
+        var four = 0;
+        var five =0;
+        var six = 0;
+        var seven = 0;
+        var eight =0;
+        var nine = 0;
+        var ten = 0;
+        var eleven = 0;
+        var twevel = 0;
+        
+        
+
+        for(var i=0; i<Result.length; i++){
+            len = Result[i].length;
+            
+
+            if( len==1){
+                one = one +1;
+
+            }else if( len==2){
+                two = two + 1;
+                
+            }else if(len == 3){
+                three = three+1;
+            }else if(len == 4){
+                four = four +1;
+
+            }else if(len == 5){
+                five = five +1;
+                
+            }else if(len == 6){
+                six = six +1;
+                
+            }else if(len == 7){
+                seven = seven +1;
+                
+            }else if(len == 8){
+                eight = eight +1;
+                
+            }else if(len == 9){
+                nine = nine +1;
+                
+            }else if(len == 10){
+                ten = ten +1;
+                
+            }else if(len == 11){
+                eleven = eleven +1;
+                
+            }else if (len == 12){
+                twevel = twevel +1;
+            }
+        }
+        document.getElementById("Result").innerHTML=`one:${one},two:${two},three:${three},four:${four},five:${five},six:${six},seven:${seven},eight:${eight},nine:${nine},ten:${ten},eleven:${eleven},twevel:${twevel};`
+    }
+   
+        function CapitalizeWords(){
+            var text=document.getElementById('text1').value;
+            var Result=text.toUpperCase();
+            document.getElementById("Result").innerHTML=Result;
+        }
+        
+        function SmallLetters(){
+            var text=document.getElementById('text1').value;
+            var Result=text.toLowerCase();
+            document.getElementById("Result").innerHTML=Result;
+        }
+
+        function reverseString() {
+            const string = document.getElementById("text1").value;
+            const Result = string.split('').reverse().join('');
+            document.getElementById("Result").innerText = "Reversed String: " + Result;
+        }
+
+
+
+    </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
