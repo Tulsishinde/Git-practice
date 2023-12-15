@@ -1,0 +1,70 @@
+<!-- Basic JavaScript and DOM Manipulation
+Task:
+Create a simple web page that allows users to input their name and then displays a personalized greeting on the page using JavaScript and DOM manipulation. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulaiton</title>
+    <style>
+        h1{
+            border: 1px solid black;
+            text-align: center;
+            width: 50%;
+            justify-content: center;
+            margin: auto;
+            background-color: rgb(198, 117, 198);
+        }
+        body{
+            text-align: center;
+            align-items: center;
+            margin: 60px;
+            background-color: rgb(212, 184, 184);
+        }
+        .padding{
+            padding: 10px;
+            margin: 10px;
+        }
+        button{
+            background-color: forestgreen;
+            border: none;
+            border-radius: 2px;
+        }
+       
+    </style>
+  </head>
+  <body>
+    <h1>Personalized Greeting</h1>
+    <form action="">
+        <div class="padding">
+        <label for="name" >Enter your Name:</label>
+        <input type="text" id="name-input">
+        </div>
+        
+        <button onclick="return displaymessage()" class="padding">Submit</button>
+        <div id="output" class="padding"></div>
+    </form>
+    <script>
+    const time = new Date().getHours();
+      function displaymessage() {
+        let name=document.getElementById("name-input").value;
+        if (time < 10) {
+          document.getElementById("output").innerHTML = "Good Morning ! "+name;
+        } else if (time < 20) {
+          document.getElementById("output").innerHTML = "Good Day! "+name;
+        } else {
+             document.getElementById("output").innerHTML = "Good Night! "+name;
+        }
+    //   }
+    // function displaymessage(){
+    //     let nameGet=document.getElementById("name-input").value;
+        // document.getElementById("output").innerHTML= "Hello "+ nameGet +" welcome!!!"; 
+        return false;
+
+
+
+    }
+    </script>
+  </body>
+</html>
