@@ -1,0 +1,43 @@
+<!-- Create an array fruits with the following elements: "apple", "orange", "banana", "grape".Add "watermelon" to the end of the array.Remove the third element from the array.Log the modified array to the console. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Fruits Array</title>
+</head>
+<body>
+    <h1>Fruits Arrays</h1>
+    <button onclick="arrFruits()" >FRUITS</button>
+    <h3 for="originalArray">original Array :  </h3>
+    <p id="fruits1"></p>
+    <h3 for="originalArray">Array after adding the elements :  </h3>
+   <p id="fruits2"></p>
+   <h3 for="originalArray">Array after Removing the third element :  </h3>
+    <p id="fruits3"></p>
+
+
+
+<script>
+    function arrFruits(){
+        const fruits=["apple","orange","banana","grapes"];
+        document.getElementById("fruits1").innerHTML=fruits;
+
+        fruits.splice(-1,0,"watermelon");
+        document.getElementById("fruits2").innerHTML=fruits;
+
+        fruits.splice(2,1);
+        document.getElementById("fruits3").innerHTML=fruits;
+
+    }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>
